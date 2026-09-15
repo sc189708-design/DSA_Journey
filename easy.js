@@ -53,4 +53,43 @@ function Tosum(num) {
     }
     console.log('no pair is found')
 }
-Tosum([7, 4, 6, 3, 5, 9, 2, 8])
+//Tosum([7, 4, 6, 3, 5, 9, 2, 8])
+
+
+// Q3 Remove Element - Given an array nums and a value val, remove all instances of that value in-place and return 
+// the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+
+function Remove(nums, val) {
+    let newval = []
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] != val) {
+            newval.push(nums[i])
+        }
+    }
+    console.log(newval)
+}
+//Remove([1, 2, 4, 6, 4, 7, 2], 2)
+
+
+// Q4 merge two sorted arrays - given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The number of elements
+//  initialized in nums1 and nums2 are m and n respectively. You may assume that nums1 has a size equal to m + n such that it has enough space to hold additional elements from nums2.
+
+function Merge(num1, num2) {
+    let merge = [];
+    let i = 0;
+    let j = 0;
+    while (i < num1.length && j < num2.length) {
+        if (num1[i] < num2[j]) {
+            merge.push(num1[i])
+            i++
+        } else {
+            merge.push(num2[j])
+            j++
+        }
+        if( i === num1.length){
+            merge.push(...num2.slice(j))
+        }
+    }
+    console.log(merge)
+}
+Merge([1, 3, 5, 7], [2, 4, 6, 8, 11, 45, 99])
