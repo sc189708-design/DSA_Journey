@@ -86,10 +86,26 @@ function Merge(num1, num2) {
             merge.push(num2[j])
             j++
         }
-        if( i === num1.length){
+        if (i === num1.length) {
             merge.push(...num2.slice(j))
         }
     }
     console.log(merge)
 }
-Merge([1, 3, 5, 7], [2, 4, 6, 8, 11, 45, 99])
+//Merge([1, 3, 5, 7], [2, 4, 6, 8, 11, 45, 99])
+
+
+//Q5 Remove Duplicates from sorted Array - Given an integer array nums sorted is non-decreaseing order, remove the duplicates in-place such that 
+// each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+
+function shorteDuplicates(nums) {
+    let add = [];
+    let i = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] != nums[i + 1]) {
+            add.push(nums[i])
+        }
+    }
+    console.log(add)
+}
+shorteDuplicates([1, 2, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9])
