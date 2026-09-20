@@ -108,4 +108,40 @@ function shorteDuplicates(nums) {
     }
     console.log(add)
 }
-shorteDuplicates([1, 2, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9])
+//shorteDuplicates([1, 2, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9])
+
+//Q6 Search Insert Position - Given a sorted array of distinct integers and a target value, return the index if the target is found. if not, 
+// return the index where it would be if it were inserted in order. You must write an algorithm with O(log n) runtime complexity.
+
+function SearcInsert(nums, find) {
+    let indexnum = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (find === nums[i]) {
+            indexnum.push(i)
+        }
+    }
+    console.log(indexnum)
+}
+//SearcInsert([1, 2, 4, 5, 3, 7, 6, 11], 1)
+
+// another way to solve this question we have not 7 number and my array is [1,3,4,5,6] now we find what is the index value of 7.
+
+function binarymethod(nums, find){
+    let left = 0;
+    let right = nums.length-1
+    while(left <= right){
+        let mid = Math.floor((left + right)/2)
+        if(nums[mid] === find){
+            left = mid;
+            break;
+        } else if(nums[mid] < find){
+            left = mid + 1;
+        } else if(nums[mid] > find){
+            right = mid - 1;
+        }
+    }
+    console.log('index value of 10 is', left)
+} binarymethod([1,3,6,8,9],10)
+
+
+Q7
