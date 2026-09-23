@@ -126,22 +126,43 @@ function SearcInsert(nums, find) {
 
 // another way to solve this question we have not 7 number and my array is [1,3,4,5,6] now we find what is the index value of 7.
 
-function binarymethod(nums, find){
+function binarymethod(nums, find) {
     let left = 0;
-    let right = nums.length-1
-    while(left <= right){
-        let mid = Math.floor((left + right)/2)
-        if(nums[mid] === find){
+    let right = nums.length - 1
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2)
+        if (nums[mid] === find) {
             left = mid;
             break;
-        } else if(nums[mid] < find){
+        } else if (nums[mid] < find) {
             left = mid + 1;
-        } else if(nums[mid] > find){
+        } else if (nums[mid] > find) {
             right = mid - 1;
         }
     }
     console.log('index value of 10 is', left)
-} binarymethod([1,3,6,8,9],10)
+}
+// binarymethod([1,3,6,8,9],10)
 
 
-Q7
+//Q7 in this qustion we are solve Revrse integerd 
+
+function RevrseIntegerd(num) {
+    let rev = 0;
+    while (num !== 0) {
+        let digit = num % 10;
+        rev = rev * 10 + digit;
+        num = Math.trunc(num / 10)
+    }
+    console.log(rev)
+}
+//RevrseIntegerd(120)
+
+//Q8 linked list example
+
+class Node{
+    constructor(val){
+        this.val = val
+        this.next = null
+    }
+}
