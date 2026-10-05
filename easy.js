@@ -158,11 +158,16 @@ function RevrseIntegerd(num) {
 }
 //RevrseIntegerd(120)
 
-//Q8 linked list example
+//Q8 Longest Common Prefix - Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix,
+//  return an empty string "".
 
-class Node{
-    constructor(val){
-        this.val = val
-        this.next = null
+function Prefixval(str) {
+    let same = "";
+    for(let i = 0 ; i<str[0].length; i++){
+        if(str[0][i] === str[1][i] && str[1][i] === str[2][i]){
+            same += str[0][i]
+        }
     }
+    console.log(same)
 }
+Prefixval(['shraja', 'shandel', 'shimla'])
